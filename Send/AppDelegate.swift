@@ -1,10 +1,7 @@
-//
-//  AppDelegate.swift
-//  Send
-//
-//  Created by Joseph Gasiorek on 1/20/19.
-//  Copyright © 2019 Joseph Gasiorek. All rights reserved.
-//
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 
 import UIKit
 
@@ -16,6 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+
+        let navController = MainNavigationController()
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+
         return true
     }
 

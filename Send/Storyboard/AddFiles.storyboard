@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Files View Controller-->
+        <scene sceneID="bQp-N6-aVA">
+            <objects>
+                <viewController storyboardIdentifier="addfiles" id="r2k-hQ-5k7" customClass="AddFilesViewController" customModule="Send" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OEF-pb-Ubk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQt-SO-BhH" userLabel="Content View">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfL-hj-QqG">
+                                        <rect key="frame" x="156" y="294" width="63" height="79"/>
+                                        <state key="normal" image="AddFiles"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Private, Encrypted Sharing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRE-fe-d17" userLabel="Header">
+                                        <rect key="frame" x="80" y="265" width="214" height="21"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="from the makers of Firefox" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kz1-Ix-rGX" userLabel="Subheader">
+                                        <rect key="frame" x="97.5" y="253.5" width="180" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="tRE-fe-d17" firstAttribute="bottom" secondItem="kz1-Ix-rGX" secondAttribute="top" constant="-8" id="Ii3-dD-nki"/>
+                                    <constraint firstItem="TfL-hj-QqG" firstAttribute="centerX" secondItem="HQt-SO-BhH" secondAttribute="centerX" id="Ldk-UG-bx9"/>
+                                    <constraint firstItem="tRE-fe-d17" firstAttribute="centerX" secondItem="HQt-SO-BhH" secondAttribute="centerX" id="lL8-es-fSR"/>
+                                    <constraint firstItem="TfL-hj-QqG" firstAttribute="centerY" secondItem="HQt-SO-BhH" secondAttribute="centerY" id="poA-Cb-wiO"/>
+                                    <constraint firstItem="kz1-Ix-rGX" firstAttribute="centerX" secondItem="HQt-SO-BhH" secondAttribute="centerX" id="rmk-zN-MAS"/>
+                                    <constraint firstItem="kz1-Ix-rGX" firstAttribute="bottom" secondItem="TfL-hj-QqG" secondAttribute="top" constant="-50" id="vKQ-ru-nnW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HQt-SO-BhH" firstAttribute="centerY" secondItem="Cbd-9r-L85" secondAttribute="centerY" id="3yM-Hh-g0Z"/>
+                            <constraint firstItem="HQt-SO-BhH" firstAttribute="width" secondItem="OEF-pb-Ubk" secondAttribute="width" id="9Zo-8W-dcm"/>
+                            <constraint firstItem="HQt-SO-BhH" firstAttribute="centerX" secondItem="Cbd-9r-L85" secondAttribute="centerX" id="GO1-D4-5kA"/>
+                            <constraint firstItem="HQt-SO-BhH" firstAttribute="height" secondItem="OEF-pb-Ubk" secondAttribute="height" id="ab5-ed-R0v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cbd-9r-L85"/>
+                    </view>
+                    <connections>
+                        <outlet property="addFilesButton" destination="TfL-hj-QqG" id="MNW-DJ-aQp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5P0-R3-OdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-215.19999999999999" y="-45.42728635682159"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AddFiles" width="24" height="24"/>
+    </resources>
+</document>
