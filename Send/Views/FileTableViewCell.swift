@@ -3,9 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 import Foundation
-import RxSwift
+import UIKit
 
-enum FilesAction: Action {
-    case selected(files: [File])
-    case send
+class FileTableViewCell: UITableViewCell {
+
 }

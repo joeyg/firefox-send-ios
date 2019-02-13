@@ -26,6 +26,18 @@ class FilesStore {
                 case .selected(let files):
                     self._files.onNext(files)
 
+                case .send:
+                    self.files
+                        .take(1)
+                        .subscribe(onNext: { (files) in
+                            let newFiles = files.map({ file -> File in
+                                file.status = .uploading(progress: 0)
+                                return file
+                            })
+                            self._files.onNext(newFiles)
+                        })
+                        .disposed(by: self.disposeBag)
+
                 }
             })
             .disposed(by: self.disposeBag)
@@ -55,5 +67,5 @@ class File {
 enum FileStatus {
     case selected
     case uploading(progress: Int)
-    case uplaoded(link: URL)
+    case uploaded(link: URL)
 }

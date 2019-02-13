@@ -5,7 +5,6 @@
 import Foundation
 import RxSwift
 
-enum FilesAction: Action {
-    case selected(files: [File])
-    case send
+enum NavigationAction: Action {
+    case selectedFiles
 }

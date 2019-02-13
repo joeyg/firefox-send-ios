@@ -11,6 +11,8 @@ import Alamofire
 protocol AddFilesViewProtocol {
     var addFilesButtonPressed: ControlEvent<Void> { get }
     func showFilesDialog()
+    func showTableView()
+    func showEmptyState()
 }
 
 class AddFilesPresenter {
@@ -36,7 +38,11 @@ class AddFilesPresenter {
 
         self.filesStore.files
             .subscribe(onNext: { (files) in
-
+                if files.count > 0 {
+                    self.view.showTableView()
+                } else {
+                    self.view.showEmptyState()
+                }
             })
             .disposed(by: self.disposeBag)
     }
@@ -69,5 +75,6 @@ class AddFilesPresenter {
         let nonNilFiles = files.compactMap { $0 }
 
         self.dispatcher.dispatch(action: FilesAction.selected(files: nonNilFiles))
+        self.dispatcher.dispatch(action: NavigationAction.selectedFiles)
     }
 }

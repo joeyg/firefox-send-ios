@@ -10,6 +10,8 @@ import RxSwift
 class AddFilesViewController: UIViewController {
     private var presenter: AddFilesPresenter?
 
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addFilesButton: UIButton!
 
     required init?(coder aDecoder: NSCoder) {
@@ -19,7 +21,7 @@ class AddFilesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = Constant.color.viewBackgroundColor
+        self.view.backgroundColor = Constant.color.landingScreenBackgroundColor
         self.navigationItem.title = Constant.string.productName
     }
 
@@ -30,6 +32,16 @@ class AddFilesViewController: UIViewController {
 }
 
 extension AddFilesViewController: AddFilesViewProtocol {
+    func showTableView() {
+        self.contentView.isHidden = true
+        self.tableView.isHidden = false
+    }
+
+    func showEmptyState() {
+        self.tableView.isHidden = true
+        self.contentView.isHidden = false
+    }
+
     public var addFilesButtonPressed: ControlEvent<Void> {
         return self.addFilesButton.rx.tap
     }

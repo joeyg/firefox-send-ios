@@ -18,6 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ws8-Tr-fvC">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="filecell" id="lEK-97-eix" customClass="FileTableViewCell" customModule="Send" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lEK-97-eix" id="TBq-fi-KCF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.303939972" green="0.94117647059999998" blue="0.36754692389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQt-SO-BhH" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                                 <subviews>
@@ -51,15 +66,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="HQt-SO-BhH" firstAttribute="height" secondItem="OEF-pb-Ubk" secondAttribute="height" id="2xZ-xQ-azY"/>
                             <constraint firstItem="HQt-SO-BhH" firstAttribute="centerY" secondItem="Cbd-9r-L85" secondAttribute="centerY" id="3yM-Hh-g0Z"/>
                             <constraint firstItem="HQt-SO-BhH" firstAttribute="width" secondItem="OEF-pb-Ubk" secondAttribute="width" id="9Zo-8W-dcm"/>
                             <constraint firstItem="HQt-SO-BhH" firstAttribute="centerX" secondItem="Cbd-9r-L85" secondAttribute="centerX" id="GO1-D4-5kA"/>
+                            <constraint firstItem="ws8-Tr-fvC" firstAttribute="centerY" secondItem="Cbd-9r-L85" secondAttribute="centerY" id="Ly3-Fn-UjL"/>
+                            <constraint firstItem="ws8-Tr-fvC" firstAttribute="width" secondItem="OEF-pb-Ubk" secondAttribute="width" id="QBC-rT-Yig"/>
                             <constraint firstItem="HQt-SO-BhH" firstAttribute="height" secondItem="OEF-pb-Ubk" secondAttribute="height" id="ab5-ed-R0v"/>
+                            <constraint firstItem="ws8-Tr-fvC" firstAttribute="height" secondItem="OEF-pb-Ubk" secondAttribute="height" id="l9P-1y-4uI"/>
+                            <constraint firstItem="ws8-Tr-fvC" firstAttribute="centerX" secondItem="Cbd-9r-L85" secondAttribute="centerX" id="nuR-AK-311"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Cbd-9r-L85"/>
                     </view>
                     <connections>
                         <outlet property="addFilesButton" destination="TfL-hj-QqG" id="MNW-DJ-aQp"/>
+                        <outlet property="contentView" destination="HQt-SO-BhH" id="iP2-wm-JOE"/>
+                        <outlet property="tableView" destination="ws8-Tr-fvC" id="Vbu-GZ-pCi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5P0-R3-OdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

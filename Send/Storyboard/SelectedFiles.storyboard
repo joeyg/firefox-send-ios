@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Selected Files View Controller-->
+        <scene sceneID="FVQ-Au-ALh">
+            <objects>
+                <viewController restorationIdentifier="selectedfiles" storyboardIdentifier="selectedfiles" id="bKT-P2-GAz" customClass="SelectedFilesViewController" customModule="Send" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ce7-5V-xqk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oa-q4-gPR" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bnG-HI-nIZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="482"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.95294117647058818" green="0.97254901960784312" blue="0.99607843137254903" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPS-L5-Ne4">
+                                        <rect key="frame" x="0.0" y="482" width="375" height="185"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expired after" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXR-wG-nkb">
+                                                <rect key="frame" x="25" y="18" width="98" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O37-0Z-MXc">
+                                                <rect key="frame" x="196" y="8" width="171" height="43"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="Lem-FV-ofi"/>
+                                                </constraints>
+                                            </pickerView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protect with password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hf-8O-CVu">
+                                                <rect key="frame" x="25" y="59" width="171" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LS1-Da-DGl">
+                                                <rect key="frame" x="87.5" y="110" width="200" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="jEZ-we-svL"/>
+                                                </constraints>
+                                                <state key="normal" title="Ready to send">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ih4-GX-FFh">
+                                                <rect key="frame" x="238" y="54" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Ih4-GX-FFh" secondAttribute="trailing" constant="83" id="CJf-RP-7IF"/>
+                                            <constraint firstItem="O37-0Z-MXc" firstAttribute="top" secondItem="gPS-L5-Ne4" secondAttribute="top" id="CPk-ul-hfM"/>
+                                            <constraint firstItem="Ih4-GX-FFh" firstAttribute="top" secondItem="O37-0Z-MXc" secondAttribute="bottom" id="Cjb-m0-EkP"/>
+                                            <constraint firstAttribute="trailing" secondItem="O37-0Z-MXc" secondAttribute="trailing" id="CzE-F5-pBy"/>
+                                            <constraint firstAttribute="height" constant="185" id="HgQ-Ts-Mxa"/>
+                                            <constraint firstItem="LS1-Da-DGl" firstAttribute="centerX" secondItem="gPS-L5-Ne4" secondAttribute="centerX" id="KBN-qt-Nge"/>
+                                            <constraint firstItem="lXR-wG-nkb" firstAttribute="leading" secondItem="gPS-L5-Ne4" secondAttribute="leading" constant="25" id="cDI-tR-JaH"/>
+                                            <constraint firstItem="LS1-Da-DGl" firstAttribute="top" secondItem="1hf-8O-CVu" secondAttribute="bottom" constant="30" id="lc1-89-f2G"/>
+                                            <constraint firstItem="1hf-8O-CVu" firstAttribute="leading" secondItem="gPS-L5-Ne4" secondAttribute="leading" constant="25" id="opJ-Tt-7x7"/>
+                                            <constraint firstItem="1hf-8O-CVu" firstAttribute="top" secondItem="lXR-wG-nkb" secondAttribute="bottom" constant="20" id="ykP-vW-kEw"/>
+                                            <constraint firstItem="lXR-wG-nkb" firstAttribute="top" secondItem="gPS-L5-Ne4" secondAttribute="top" constant="18" id="ylu-fw-VGw"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95294117647058818" green="0.97254901960784312" blue="0.99607843137254903" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="UMo-0Q-csF" firstAttribute="trailing" secondItem="gPS-L5-Ne4" secondAttribute="trailing" id="7wE-7T-ezq"/>
+                                    <constraint firstItem="bnG-HI-nIZ" firstAttribute="leading" secondItem="UMo-0Q-csF" secondAttribute="leading" id="E3m-hq-xKd"/>
+                                    <constraint firstItem="UMo-0Q-csF" firstAttribute="trailing" secondItem="bnG-HI-nIZ" secondAttribute="trailing" id="HI7-OP-Vey"/>
+                                    <constraint firstItem="UMo-0Q-csF" firstAttribute="top" secondItem="bnG-HI-nIZ" secondAttribute="top" constant="10" id="Iyn-1i-csI"/>
+                                    <constraint firstItem="gPS-L5-Ne4" firstAttribute="leading" secondItem="UMo-0Q-csF" secondAttribute="leading" id="SJw-oZ-Mdt"/>
+                                    <constraint firstItem="bnG-HI-nIZ" firstAttribute="bottom" secondItem="gPS-L5-Ne4" secondAttribute="top" id="pnt-ID-eg1"/>
+                                    <constraint firstItem="UMo-0Q-csF" firstAttribute="bottom" secondItem="gPS-L5-Ne4" secondAttribute="bottom" id="yYr-IO-cHl"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="UMo-0Q-csF"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.97254901960784312" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5oa-q4-gPR" firstAttribute="width" secondItem="Ce7-5V-xqk" secondAttribute="width" id="4O9-ai-ksq"/>
+                            <constraint firstItem="5oa-q4-gPR" firstAttribute="centerY" secondItem="SOH-8n-BO1" secondAttribute="centerY" id="dcS-hY-0QF"/>
+                            <constraint firstItem="5oa-q4-gPR" firstAttribute="height" secondItem="Ce7-5V-xqk" secondAttribute="height" id="ns8-Zp-n9d"/>
+                            <constraint firstItem="5oa-q4-gPR" firstAttribute="centerX" secondItem="SOH-8n-BO1" secondAttribute="centerX" id="u3X-Tm-aXt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SOH-8n-BO1"/>
+                    </view>
+                    <connections>
+                        <outlet property="optionsView" destination="gPS-L5-Ne4" id="n2Z-Fo-ge7"/>
+                        <outlet property="pickerView" destination="O37-0Z-MXc" id="4jX-ey-LLO"/>
+                        <outlet property="sendButton" destination="LS1-Da-DGl" id="We9-AF-oCJ"/>
+                        <outlet property="tableView" destination="bnG-HI-nIZ" id="VO8-nL-1hr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Or-ke-ldm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-186.40000000000001" y="7.6461769115442282"/>
+        </scene>
+    </scenes>
+</document>
