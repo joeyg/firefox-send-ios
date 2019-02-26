@@ -100,8 +100,8 @@ class Keychain {
         guard let ivString = self.toBase64(self.iv) else { return nil }
 
         do {
-            let aes = try AES(key: metadataKey, blockMode: GCM(iv: Array<UInt8>(repeating: 0, count: 12), additionalAuthenticatedData: nil, tagLength: 128, mode: .combined))
-            let ciphertext = try aes.encrypt("{iv:'\(ivString)',name:'\(name)',type:'\(dataType)'}".bytes)
+            let aes = try AES(key: metadataKey, blockMode: GCM(iv: Array<UInt8>(repeating: 0, count: 12), additionalAuthenticatedData: nil, tagLength: 128, mode: .combined), padding: .noPadding)
+            let ciphertext = try aes.encrypt("{\"iv\":\"\(ivString)\", \"name\":\"\(name)\", \"type\":\"\(dataType)\"}".bytes)
             return self.toBase64(ciphertext)
         } catch let error {
             debugPrint(error)
