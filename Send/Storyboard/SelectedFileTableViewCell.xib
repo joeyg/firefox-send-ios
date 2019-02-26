@@ -34,6 +34,11 @@
                         <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qwy-Mn-Z68">
                             <rect key="frame" x="32" y="63.5" width="300" height="2"/>
                         </progressView>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-da-nKk">
+                            <rect key="frame" x="275" y="33" width="68" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Copy Link"/>
+                        </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueFile" translatesAutoresizingMaskIntoConstraints="NO" id="gfd-Dh-DSb">
                             <rect key="frame" x="0.0" y="20" width="22" height="32"/>
                             <constraints>
@@ -76,6 +81,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="copyLinkbutton" destination="OJb-da-nKk" id="BX4-1I-NOb"/>
                 <outlet property="fileNameLabel" destination="FhV-2W-cBh" id="4x8-cn-QEu"/>
                 <outlet property="fileSizeLabel" destination="oHr-OT-E5G" id="2jx-nF-0dn"/>
                 <outlet property="progressView" destination="qwy-Mn-Z68" id="oVb-qD-bj7"/>

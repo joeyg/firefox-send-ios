@@ -11,13 +11,13 @@ import RxDataSources
 typealias ItemSectionModel = AnimatableSectionModel<Int, FileCellConfiguration>
 
 enum FileCellConfiguration {
-    case Selected(name: String, size: String, progress: Float)
+    case Selected(name: String, size: String, progress: Float, shareUrl: URL?)
 }
 
 extension FileCellConfiguration: IdentifiableType {
     var identity: String {
         switch self {
-        case .Selected(let name, _, _):
+        case .Selected(let name, _, _, _):
             return name
         }
     }
@@ -26,8 +26,8 @@ extension FileCellConfiguration: IdentifiableType {
 extension FileCellConfiguration: Equatable {
     static func ==(lhs: FileCellConfiguration, rhs: FileCellConfiguration) -> Bool {
         switch (lhs, rhs) {
-        case (.Selected(let lhName, let lhSize, let lhProgress), .Selected(let rhName, let rhSize, let rhProgress)):
-            return lhName == rhName && lhSize == rhSize && lhProgress == rhProgress
+        case (.Selected(let lhName, let lhSize, let lhProgress, let lhShareUrl), .Selected(let rhName, let rhSize, let rhProgress, let rhShareUrl)):
+            return lhName == rhName && lhSize == rhSize && lhProgress == rhProgress && lhShareUrl == rhShareUrl
         }
     }
 }
@@ -72,13 +72,25 @@ class SelectedFilesViewController: UIViewController {
                 let cellConfiguration = dataSource[path]
                 var retCell: UITableViewCell
                 switch cellConfiguration {
-                case .Selected(let name, let size, let progress):
+                case .Selected(let name, let size, let progress, let shareUrl):
                     guard let cell = tableView.dequeueReusableCell(withIdentifier: "selectedfilecell") as? SelectedFileTableViewCell else {
                             fatalError("Couldn't fild selected file table view cell")
                         }
 
                     cell.setText(name: name, size: size)
                     cell.setProgress(progress)
+
+                    if let presenter = self.presenter {
+                        if let shareUrl = shareUrl {
+                            cell.setShareUrl(shareUrl)
+                            cell.copyLinkbutton.rx.tap
+                                .map { _ -> URL in
+                                    return shareUrl
+                                }
+                                .bind(to: presenter.onShareUrlTapped)
+                                .disposed(by: cell.disposeBag)
+                        }
+                    }
 
                     retCell = cell
                 }

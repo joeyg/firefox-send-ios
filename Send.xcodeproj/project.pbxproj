@@ -27,6 +27,8 @@
 		D8152629221216880056EC54 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8152628221216880056EC54 /* Color+.swift */; };
 		D815262B2215281E0056EC54 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D815262A2215281E0056EC54 /* CryptoSwift.framework */; };
 		D815262D2215284B0056EC54 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815262C2215284B0056EC54 /* Keychain.swift */; };
+		D815262F2225F24B0056EC54 /* CopyAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815262E2225F24B0056EC54 /* CopyAction.swift */; };
+		D81526312225F2900056EC54 /* CopyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81526302225F2900056EC54 /* CopyStore.swift */; };
 		D8E6BEAA220FA63100D3DD1E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E6BEA5220FA63100D3DD1E /* RxSwift.framework */; };
 		D8E6BEAB220FA63100D3DD1E /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E6BEA6220FA63100D3DD1E /* Differentiator.framework */; };
 		D8E6BEAC220FA63100D3DD1E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E6BEA7220FA63100D3DD1E /* RxDataSources.framework */; };
@@ -100,6 +102,8 @@
 		D8152628221216880056EC54 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		D815262A2215281E0056EC54 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		D815262C2215284B0056EC54 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		D815262E2225F24B0056EC54 /* CopyAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyAction.swift; sourceTree = "<group>"; };
+		D81526302225F2900056EC54 /* CopyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyStore.swift; sourceTree = "<group>"; };
 		D8E6BEA5220FA63100D3DD1E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		D8E6BEA6220FA63100D3DD1E /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		D8E6BEA7220FA63100D3DD1E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			children = (
 				D8E6BEC2220FD4E100D3DD1E /* FilesAction.swift */,
 				D815261822111BD80056EC54 /* NavigationAction.swift */,
+				D815262E2225F24B0056EC54 /* CopyAction.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 			children = (
 				D8E6BEC5220FD52100D3DD1E /* FilesStore.swift */,
 				D815262622112DDB0056EC54 /* UploadStore.swift */,
+				D81526302225F2900056EC54 /* CopyStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -471,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D815262F2225F24B0056EC54 /* CopyAction.swift in Sources */,
 				D8E6BEB2220FA71E00D3DD1E /* MainNavigationController.swift in Sources */,
 				D8E6BEB8220FAA9900D3DD1E /* AddFilesPresenter.swift in Sources */,
 				D8E6BEC0220FD42E00D3DD1E /* Dispatcher.swift in Sources */,
@@ -480,6 +487,7 @@
 				D8E6BEC6220FD52100D3DD1E /* FilesStore.swift in Sources */,
 				D8E6BEB6220FA98F00D3DD1E /* Constant.swift in Sources */,
 				D8E6BEC3220FD4E100D3DD1E /* FilesAction.swift in Sources */,
+				D81526312225F2900056EC54 /* CopyStore.swift in Sources */,
 				D8E6BEB4220FA7B700D3DD1E /* AddFilesViewController.swift in Sources */,
 				D815261922111BD80056EC54 /* NavigationAction.swift in Sources */,
 				D815261D22111C550056EC54 /* SelectedFilesPresenter.swift in Sources */,

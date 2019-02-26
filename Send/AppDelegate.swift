@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         _ = UploadStore.shared
+        _ = CopyStore.shared
 
         return true
     }

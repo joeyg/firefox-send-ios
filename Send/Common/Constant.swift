@@ -19,5 +19,10 @@ class Constant {
         static let startUploadFiles = NSLocalizedString("startUploadFiles", value: "Start upload files", comment: "Label to start upload files")
         static let anythingToSend = NSLocalizedString("anythingToSend", value: "Anything to send", comment: "label for anything to send")
         static let selectedFiles = NSLocalizedString("selectedFiles", value: "Selected Files", comment: "title for selected files screen")
+        static let copyMessage = NSLocalizedString("copyMessage", value: "URL Copied", comment: "Label displayed to users after a copy action")
+    }
+
+    struct number {
+       static let copyExpireTimeSecs = 60
     }
 }

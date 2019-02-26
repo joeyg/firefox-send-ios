@@ -38,6 +38,21 @@ class FilesStore {
                         })
                         .disposed(by: self.disposeBag)
 
+                case .sent(let owner, let id, let url, let nonce):
+                    self.files
+                        .take(1)
+                        .subscribe(onNext: { (files) in
+                            let newFiles = files.map({ (file) -> File in
+                                let newUrl = URL(string: url)
+                                let file = File(status: .uploaded(shareUrl: newUrl), name: file.name, size: file.size, type: file.type, url: file.url)
+                                file.shareUrl = newUrl
+                                return file
+                            })
+
+                            self._files.onNext(newFiles)
+                        })
+                        .disposed(by: self.disposeBag)
+                    break
                 }
             })
             .disposed(by: self.disposeBag)
@@ -50,6 +65,7 @@ class File {
     var size: UInt64
     var type: String
     var url: URL
+    var shareUrl: URL?
 
     init(status: FileStatus,
          name: String,
@@ -67,5 +83,5 @@ class File {
 enum FileStatus {
     case selected
     case uploading(progress: Int)
-    case uploaded(link: URL)
+    case uploaded(shareUrl: URL?)
 }

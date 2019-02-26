@@ -4,13 +4,16 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class SelectedFileTableViewCell: UITableViewCell {
     @IBOutlet weak var fileNameLabel: UILabel!
-    
     @IBOutlet weak var fileSizeLabel: UILabel!
-
+    @IBOutlet weak var copyLinkbutton: UIButton!
     @IBOutlet weak var progressView: UIProgressView!
+
+    let disposeBag = DisposeBag()
+
     public func setText(name: String, size: String) {
         self.fileNameLabel.text = name
         self.fileSizeLabel.text = size
@@ -23,5 +26,9 @@ class SelectedFileTableViewCell: UITableViewCell {
         } else {
             self.progressView.isHidden = true
         }
+    }
+
+    public func setShareUrl(_ url: URL) {
+        self.copyLinkbutton.isHidden = false
     }
 }

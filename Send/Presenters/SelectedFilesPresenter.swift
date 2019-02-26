@@ -22,6 +22,12 @@ class SelectedFilesPresenter {
     private var uploadStore: UploadStore
     private let disposeBag = DisposeBag()
 
+    lazy private(set) var onShareUrlTapped: AnyObserver<URL> = {
+        return Binder(self) { target, url in
+            target.dispatcher.dispatch(action: CopyAction.copy(url: url))
+            }.asObserver()
+    }()
+
     init(view: SelectedFilesViewProtocol,
          dispatcher: Dispatcher = Dispatcher.shared,
          filesStore: FilesStore = FilesStore.shared,
@@ -56,7 +62,10 @@ class SelectedFilesPresenter {
 
     private func configurationForFiles(_ files: [File], progress: Float) -> [FileCellConfiguration] {
         return files.map { (file) -> FileCellConfiguration in
-            return FileCellConfiguration.Selected(name: file.name, size: self.fileSizeBytesToString(file.size), progress: progress)
+            return FileCellConfiguration.Selected(name: file.name,
+                                                  size: self.fileSizeBytesToString(file.size),
+                                                  progress: progress,
+                                                  shareUrl: file.shareUrl)
         }
     }
 

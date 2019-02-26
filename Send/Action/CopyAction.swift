@@ -5,8 +5,10 @@
 import Foundation
 import RxSwift
 
-enum FilesAction: Action {
-    case selected(files: [File])
-    case send
-    case sent(owner: String, id: String, url: String, nonce: String)
+enum CopyAction: Action {
+    case copy(url: URL)
+
+    var text: String {
+        return Constant.string.copyMessage
+    }
 }
