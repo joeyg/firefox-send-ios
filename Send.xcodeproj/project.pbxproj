@@ -25,6 +25,8 @@
 		D8152625221127130056EC54 /* SelectedFileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8152624221127130056EC54 /* SelectedFileTableViewCell.xib */; };
 		D815262722112DDB0056EC54 /* UploadStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815262622112DDB0056EC54 /* UploadStore.swift */; };
 		D8152629221216880056EC54 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8152628221216880056EC54 /* Color+.swift */; };
+		D815262B2215281E0056EC54 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D815262A2215281E0056EC54 /* CryptoSwift.framework */; };
+		D815262D2215284B0056EC54 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D815262C2215284B0056EC54 /* Keychain.swift */; };
 		D8E6BEAA220FA63100D3DD1E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E6BEA5220FA63100D3DD1E /* RxSwift.framework */; };
 		D8E6BEAB220FA63100D3DD1E /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E6BEA6220FA63100D3DD1E /* Differentiator.framework */; };
 		D8E6BEAC220FA63100D3DD1E /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E6BEA7220FA63100D3DD1E /* RxDataSources.framework */; };
@@ -96,6 +98,8 @@
 		D8152624221127130056EC54 /* SelectedFileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedFileTableViewCell.xib; sourceTree = "<group>"; };
 		D815262622112DDB0056EC54 /* UploadStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadStore.swift; sourceTree = "<group>"; };
 		D8152628221216880056EC54 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		D815262A2215281E0056EC54 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		D815262C2215284B0056EC54 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		D8E6BEA5220FA63100D3DD1E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		D8E6BEA6220FA63100D3DD1E /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		D8E6BEA7220FA63100D3DD1E /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D815262B2215281E0056EC54 /* CryptoSwift.framework in Frameworks */,
 				D8E6BEAA220FA63100D3DD1E /* RxSwift.framework in Frameworks */,
 				D8E6BEAB220FA63100D3DD1E /* Differentiator.framework in Frameworks */,
 				D8E6BEAC220FA63100D3DD1E /* RxDataSources.framework in Frameworks */,
@@ -207,6 +212,7 @@
 		D814AD1F21F575CB0063777E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D815262A2215281E0056EC54 /* CryptoSwift.framework */,
 				D8E6BEA6220FA63100D3DD1E /* Differentiator.framework */,
 				D8E6BEA8220FA63100D3DD1E /* RxCocoa.framework */,
 				D8E6BEA7220FA63100D3DD1E /* RxDataSources.framework */,
@@ -246,6 +252,7 @@
 				D8E6BEBF220FD42E00D3DD1E /* Dispatcher.swift */,
 				D8E6BEC7220FD58500D3DD1E /* Observable+.swift */,
 				D8152628221216880056EC54 /* Color+.swift */,
+				D815262C2215284B0056EC54 /* Keychain.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -447,6 +454,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -468,6 +476,7 @@
 				D8E6BEC0220FD42E00D3DD1E /* Dispatcher.swift in Sources */,
 				D8152629221216880056EC54 /* Color+.swift in Sources */,
 				D8152623221125580056EC54 /* SelectedFileTableViewCell.swift in Sources */,
+				D815262D2215284B0056EC54 /* Keychain.swift in Sources */,
 				D8E6BEC6220FD52100D3DD1E /* FilesStore.swift in Sources */,
 				D8E6BEB6220FA98F00D3DD1E /* Constant.swift in Sources */,
 				D8E6BEC3220FD4E100D3DD1E /* FilesAction.swift in Sources */,
