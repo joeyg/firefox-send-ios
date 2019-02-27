@@ -83,9 +83,7 @@ class UploadStore {
                     method: .post,
                     headers: headers)
                     .uploadProgress { progress in // main queue by default
-                        let p = Float((progress.completedUnitCount / progress.totalUnitCount) * 100)
-                        print(p)
-                        self._progress.onNext(p)
+                        self._progress.onNext(Float(progress.fractionCompleted))
                         print("Upload Progress: \(progress.fractionCompleted)")
 
                     }.responseJSON(completionHandler: { (response) in

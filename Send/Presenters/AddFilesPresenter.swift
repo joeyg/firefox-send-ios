@@ -36,15 +36,7 @@ class AddFilesPresenter {
             })
             .disposed(by: self.disposeBag)
 
-        self.filesStore.files
-            .subscribe(onNext: { (files) in
-                if files.count > 0 {
-                    self.view.showTableView()
-                } else {
-                    self.view.showEmptyState()
-                }
-            })
-            .disposed(by: self.disposeBag)
+        self.view.showEmptyState()
     }
 
     func filesSelected(urls: [URL]) {

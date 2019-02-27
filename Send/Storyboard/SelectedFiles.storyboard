@@ -36,9 +36,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O37-0Z-MXc">
-                                                <rect key="frame" x="196" y="8" width="171" height="43"/>
+                                                <rect key="frame" x="196" y="7" width="171" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="43" id="Lem-FV-ofi"/>
+                                                    <constraint firstAttribute="width" constant="171" id="zI6-aM-25n"/>
                                                 </constraints>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protect with password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hf-8O-CVu">
